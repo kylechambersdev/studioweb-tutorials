@@ -8,6 +8,9 @@
 <body>
 
 <h1>View Records</h1>
+
+<p><b>View All</b> | <b><a href="view-paginated.php">View Paginated</a></b></p>
+
 <?php
 //include the database connection
 include 'connect-db.php';
