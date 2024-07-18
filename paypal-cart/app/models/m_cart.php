@@ -109,9 +109,56 @@ class Cart
     {
         //get products currently in cart
         $products = $this->get();
+        //establish variables
+        $data = '';
+        $total = 0;
+        //create cart header row
+        $data .= '<li class="header_row"><div class="col1">Product Name:</div><div class="col2">Quantity:</div><div class="col3">Product Price:</div><div class="col4">Total Price:</div></li>';
+        //check for products in cart
+        if($products != '')
+        {
+            //products to display
+            $line = 1;
 
-        echo '<pre>';
-        print_r($products);
-        echo '</pre>';
+            foreach($products as $product)
+            {
+                //create new item in cart
+                $data .= '<li';
+                //alternate row colors with "alt" class
+                if($line % 2 == 0)
+                {
+                    $data .= ' class="alt"';
+                }
+                //each item row in cart
+                $data .= '><div class="col1">' . $product['name'] . '</div>';
+                $data .= '<div class="col2"><input name="product' . $product['id'] . '" value="' . $_SESSION['cart'][$product['id']] . '"></div>';
+                $data .= '<div class="col3">$' . $product['price'] . '</div>';
+                $data .= '<div class="col4">$' . $product['price'] * $_SESSION['cart'][$product['id']] . '</div></li>';
+
+                $total += $product['price'] * $_SESSION['cart'][$product['id']];
+                $line++;
+            }
+
+                //add subtotal row
+                $data .= '<li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">$' . $total . '</div></li>';
+
+                //add total row
+                $data .= '<li class="total_row"><div class="col1">Total:</div><div class="col2">$' . $total . '</div></li>';
+
+        }
+        else
+        {
+            //no products to display
+            $data .= '<li><strong>No items in the cart!</strong></li>';
+
+            //add subtotal row
+            $data .= '<li class="subtotal_row"><div class="col1">Subtotal:</div><div class="col2">$0.00</div></li>';
+
+            //add total row
+            $data .= '<li class="total_row"><div class="col1">Total:</div><div class="col2">$0.00</div></li>';
+        }
+
+        return $data;
     }
+
 }

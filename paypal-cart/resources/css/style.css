@@ -253,7 +253,7 @@ h1 {
 
 .shoppingcart .buttons_row {
     position: relative;
-    top: -101px;
+    top: -60px; /*-101px*/
 }
 
 .shoppingcart .submit_row {
