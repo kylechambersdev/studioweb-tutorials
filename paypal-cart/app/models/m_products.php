@@ -157,6 +157,48 @@
     }
 
     /**
+     * Return an array of price info for specified ids
+     * 
+     * @access public
+     * @param array
+     * @return array
+     */
+    public function get_prices($ids)
+    {
+        $data = array();
+
+        //create comma separated list of ids
+        $items = '';
+        foreach($ids as $id)
+        {
+            if($items != '')
+            {
+                $items .= ',';
+            }
+            $items .= $id;
+        }
+
+        //get multiple product info based on list of ids
+        if($result = $this->Database->query("SELECT id, price FROM " . $this->db_table . " WHERE id IN ($items) ORDER BY name"))
+        {
+            if($result->num_rows > 0)
+            {
+                while ($row = $result->fetch_array())
+                {
+                    //organize data in array = $data
+                    $data[] = array(
+                        'id' => $row['id'], 
+                        'price' => $row['price']
+                    );
+
+                }
+            }
+        }
+        //return the array of ids and prices
+        return $data;
+    }
+
+    /**
      * Check to see if product exists in the database
      * 
      * @access public

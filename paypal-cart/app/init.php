@@ -20,6 +20,8 @@ define('SITE_NAME', 'My Online Store'); //first term is variable, second term is
 define('SITE_PATH', 'http://localhost:8888/studioweb-tutorials/paypal-cart/'); 
 define('IMAGE_PATH', SITE_PATH.'resources/images/'); //concatenation
 
+define('SHOP_TAX', .0575 );
+
 //include objects
 include("app/models/m_template.php");
 include("app/models/m_categories.php");
@@ -33,3 +35,8 @@ $Products = new Products();
 $Cart = new Cart();
 
 session_start();
+
+//global
+//sets total items in top right of every page (sets when page loads but not if user updates/empties cart while on the page b/c init.php only runs on page load)
+$Template->set_data('cart_total_items', $Cart->get_total_items());
+$Template->set_data('cart_total_cost', $Cart->get_total_cost());

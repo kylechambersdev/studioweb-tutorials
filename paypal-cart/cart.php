@@ -32,11 +32,41 @@ if(isset($_GET['id']) && is_numeric($_GET['id']))
     $Template->redirect(SITE_PATH . 'cart.php');
 }
 
+//check if emtpy is in url, indicating user clicked emtpy cart button
 if(isset($_GET['empty']))
 {
     $Cart->empty_cart();
+    //sets total items in top right of every page
+    $Template->set_data('cart_total_items', 0);
+    $Template->set_data('cart_total_cost', '0.00');
     $Template->set_alert('Shopping cart emptied!', 'success');
     $Template->redirect(SITE_PATH . 'cart.php');
+}
+
+//check if user has clicked the update cart button
+if(isset($_POST['update']))
+{
+    //get all ids of products in cart
+    $ids = $Cart->get_ids();
+
+    //make sure we have ids to work with
+    if($ids != NULL)
+    {
+        foreach($ids as $id)
+        {
+            if(is_numeric($_POST['product' . $id]))
+            {
+                $Cart->update($id, $_POST['product' . $id]);
+            }
+        }
+    }
+    //sets total items in top right of every page
+    $Template->set_data('cart_total_items', $Cart->get_total_items());
+    $Template->set_data('cart_total_cost', $Cart->get_total_cost());
+
+
+    //add alert
+    $Template->set_alert('Number of items in cart updated!', 'success');
 }
 
 //get items in cart

@@ -7,7 +7,7 @@
     <div class="price">$<?php $this->get_data('prod_price'); ?></div>
     <div class="description"><?php $this->get_data('prod_description'); ?></div>
 
-    <a href="cart?add=<?php $this->get_data('products'); ?>" class="button">Add to cart</a>
+    <a href="cart.php?id=<?php $this->get_data('prod_id'); ?>" class="button">Add to cart</a>
 
         <?php $this->get_data('products'); ?>
     
