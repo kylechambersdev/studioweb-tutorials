@@ -1,0 +1,20 @@
+body { font-family: Arial; background: #eee; margin: 0; padding: 6px 0 0 0; font-size: 13px; }
+
+p { margin: 16px 0; }
+
+#wrapper { width:900px; padding:20px; background: #fff; margin: 0 auto 20px auto; border-top: 3px solid #000; }
+
+	h1 { margin-top: 0; padding-left: 20px; }
+	
+	#banner { line-height: 0; font-size: 1px; }
+	
+	#nav { margin: 0; padding: 0; list-style: none; background: #ccc; width: 900px; overflow: hidden; }
+		#nav li { float: left; }
+		#nav li a { float:left; padding: 10px 20px; display: block; border-right: 1px solid gray; background: #ccc; font-size: 12px; font-weight: bold; text-decoration: none; color:#000; }
+			#nav li a:hover { background: #bbb; }
+			
+	#content { min-height: 300px; padding: 0 20px; overflow: hidden; }
+		#content .left { width:630px; float: left; padding: 20px 0; min-height: 300px; }
+		#content .right { width:200px; float:right; margin-top: 62px; padding: 0; }
+		
+	#footer { clear:both; text-align: center; font-size: 11px; padding-top: 20px; border-top: 1px solid #ccc; }

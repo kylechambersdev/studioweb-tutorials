@@ -1,0 +1,163 @@
+#fp_wrapper {
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+}
+
+#fp_wrapper h1 {
+	background: #000 url(../images/h1_bg.gif) bottom right no-repeat;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #fff;
+	margin: 0;
+}
+
+#fp_content {
+	padding: 20px;
+	overflow: hidden;
+}
+
+/* login */
+#fp_wrapper .alerts { padding: 0; margin-bottom: 0 0 20px 0; font-size: 12px; }
+#fp_wrapper .alerts li { margin-bottom: 3px; list-style: none; }
+#fp_wrapper .alerts li.success { background: #c8eebf; border:1px solid green; color:green; 
+		padding: 8px; }
+#fp_wrapper .alerts li.warning { background: #f6f6cf; border:1px solid orange; color:orange; 
+padding: 8px; }
+#fp_wrapper .alerts li.error { background: #fce9e9; border:1px solid red; color:red; 
+padding: 8px; }
+
+#fp_wrapper .row { clear:both; margin-bottom: 6px; overflow: hidden; }
+#fp_wrapper .submitrow {
+	margin-top: 14px;
+}
+
+#fp_wrapper .required {border: 1px solid red; }
+#fp_wrapper label { float: left; width: 100px; display: block; padding-top:6px; font-weight: bold; }
+#fp_wrapper input { width: 226px; padding: 3px; float: left; border: 1px solid #ccc; }
+#fp_wrapper input.submit { width: auto; background: #fd830e; padding: 5px 22px; cursor: pointer; border: 0; color: #fff;}
+#fp_wrapper input.submit:hover {
+	background: #ed6b00;
+}
+#fp_wrapper #fp_cancel{
+	position: relative;
+	top: 6px;
+	left: 10px;
+	color: red;
+	font-size: 12px;
+}
+
+/**
+ * editing preview
+ */
+
+ body.fp_editing {
+	margin-top: 42px !important;
+ }
+
+ #fp_toolbar {
+	height: 42px;
+	color: #fff;
+	font-size: 12px;
+	background: #000 url(../images/toolbar_bg.gif) top center no-repeat;
+	/* takes image outside of the flow of the page to avoid it impacting other elements */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* prevents toolbar background from being cut off */
+	min-width: 940px;
+ }
+
+ #fp_toolbar .fp_wrapper {
+	width: 940px;
+	margin: 0 auto;
+	padding-top: 14px;
+ }
+
+ #fp_toolbar .left {
+	float: left;
+	padding-left: 76px;
+ }
+
+ #fp_toolbar .right {
+	float: right;
+	padding-right: 20px;
+ }
+
+#fp_toolbar a {
+	color: #fff;
+	}
+
+#fp_toolbar a:hover {
+	color: #eee;
+ }
+ .fp_edit {
+	position: relative;
+	display: inline-block;
+	z-index: 0;
+ }
+
+ .fp_edit_type {
+	position: absolute;
+	display: block;
+	padding: 4px 18px 0; background: url(../images/edit_type.gif) top center no-repeat;
+	color: #fff;
+	font-size: 11px;
+	top: -6px;
+	right: 10px;
+	height: 25px;
+	text-decoration: none;
+	z-index: 100;
+ }
+
+ .fp_edit_link {
+	border: 1px solid orange;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	overflow: hidden;
+	/* moves edit block text off screen */
+	text-indent: -9999px;
+	outline: none;
+	/* transparent background image fixed issue with browser not recognizing hover state, while positioned over other element */
+	background: url(../images/trans.gif);
+	z-index: 99;
+ }
+/* sets hover affect when hovered over and when .hover class is added */
+ .fp_edit_link:hover, .fp_edit_link.hover {
+	background: url(../images/edit_bg.png);
+ }
+
+ /* editing window */
+ #fp_wrapper textarea.textarea {
+	width: 700px; 
+	height: 194px;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 13px;
+	border: 1px solid #ccc;
+ }
+ 
+ #fp_wrapper textarea.wysiwyg {
+	width: 700px; 
+	height: 300px;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 13px;
+	border: 1px solid #ccc;
+ }
+ #fp_wrapper input.oneline {
+	width: 700px; 
+	font-family: Arial;
+	font-size: 13px;
+	padding: 13px;
+	border: 1px solid #ccc;
+ }
+
+ /* settings page views */
+.fp_page {padding: 0; margin: 0; background: url(../images/page_bg.gif) 0 0 repeat-y; min-height: 400px;}
+.fp_page #fp_content {padding: 0;}
+.fp_page .fp_left {float: left; width: 250px;}
+.fp_page .fp_right {float: right; width: 600px; padding-left: 40px;}

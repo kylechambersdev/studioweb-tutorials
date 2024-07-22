@@ -1,0 +1,1 @@
+the files in templates are partial views, not full html files, but links to css and js files that our CMS will use
