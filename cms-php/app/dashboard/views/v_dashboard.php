@@ -9,7 +9,7 @@ $this->load(APP_PATH . 'core/templates/t_page_head.php');
         </h1>
         <div id="fp_content">
             <div class="fp_left">
-                <?php $this->cms_nav('dashboard'); ?>
+                <?php $this->cms_nav('settings', 'change_password'); ?>
             </div>
             <div class="fp_right">
                 <h2>Dashboard</h2>

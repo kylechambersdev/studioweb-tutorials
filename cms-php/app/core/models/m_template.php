@@ -142,7 +142,7 @@ class Template
             }
         }
         //create nav menu
-        $nav = '<ul class"fp_nav">';
+        $nav = '<ul class="fp_nav">';
         $nav .= '<li class="' . $sections[0]['dashboard'] . '"><a href="../dashboard/index.php">Dashboard</a></li>';
         $nav .= '<li class="' . $sections[1]['users'] . '">
                     <span>Users</span>

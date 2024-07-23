@@ -77,6 +77,13 @@ class Auth
             exit;
         }
     }
+
+    //get the current username of logged in user
+    function getCurrentUserName()
+	{
+		return $_SESSION['username'];
+	}
+
     //log user out and restart session (clears any variables stored in session)
     function logout()
     {
