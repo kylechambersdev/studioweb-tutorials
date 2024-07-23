@@ -78,6 +78,12 @@ class Auth
         }
     }
 
+    //get the salt
+    function getSalt()
+    {
+        return $this->salt;
+    }
+
     //get the current username of logged in user
     function getCurrentUserName()
 	{

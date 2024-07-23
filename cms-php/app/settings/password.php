@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
     }
     else
     {
-        //store username and new password to variable equal to a function that changes the password in the database
+        //store username and new password to variable equal to a function that changes the password in the database.  OR issue using submit function w/o ajax, in a colorbox window.
         $changed = $Settings->changePassword($FP->Auth->getCurrentUserName(), $FP->Template->getData('newpass'));
 
         //if password is changed
